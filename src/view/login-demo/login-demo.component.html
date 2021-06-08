@@ -1,0 +1,23 @@
+<section>
+  <div class="title">
+    <h1 id="textLogin">Inicio de sesión</h1>
+  </div>
+
+  <div class="container-file">
+    <div class="container-file__upload">
+      <div class="box">
+        <form [formGroup]="presenter.Form">
+          <div class="col-xs-12 col-12 mb-20">
+            <label >Usuario</label>
+            <input type="text" formControlName="user" id="formUser" name="firstname">
+          </div>
+          <div class="col-xs-12 col-12 mb-20">
+            <label >Contraseña</label>
+            <input type="password" formControlName="password" id="formPassword" name="password">
+          </div>
+          <button [ngClass]="{'button': presenter.Form.valid, 'disabled': presenter.Form.invalid}" [disabled]="presenter.Form.invalid" id="btnLogin" (click)="signIn()">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

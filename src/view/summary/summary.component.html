@@ -1,0 +1,28 @@
+<section>
+  <div class="title">
+    <h1 id="textSummary">Resumen</h1>
+  </div>
+
+  <div class="container-file">
+    <div class="container-file__upload">
+      <div class="box">
+        <div class="summary">
+          <p id="text">Datos de la empresa</p>
+          <p id="text">Ruc: {{company.ruc}}</p>
+          <p id="text">Razon sócial: {{company.name}}</p>
+        </div>
+
+        <div class="summary">
+          <p id="text">Operación realizada por</p>
+          <p id="text">Usuario: {{user.user}}</p>
+        </div>
+
+        <div class="summary">
+          <p id="text">Nombre del archivo</p>
+          <p id="text">Archivo: {{file}}</p>
+        </div>
+        <button id="btnExit" (click)="out()">Salir</button>
+      </div>
+    </div>
+  </div>
+</section>

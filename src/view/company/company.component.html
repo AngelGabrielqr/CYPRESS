@@ -1,0 +1,26 @@
+<section>
+  <div class="title">
+    <h1 id="txtCompany">Datos de la Empresa</h1>
+  </div>
+  <div class="container-file">
+    <div class="container-file__upload">
+      <div class="box">
+        <form [formGroup]="presenter.Form">
+          <div class="col-12 mb-20">
+            <label>Rázon social</label>
+            <input type="text" formControlName="name" id="formNameCompany" name="name">
+          </div>
+          <div class="col-12 mb-20">
+            <label>Ruc</label>
+            <input type="text" formControlName="ruc" id="formRuc" name="ruc">
+          </div>
+          <div class="col-12 mb-20">
+            <label>Dirección</label>
+            <input type="text" formControlName="address" id="formAddress" name="address">
+          </div>
+          <button [ngClass]="{'button': presenter.Form.valid, 'disabled': presenter.Form.invalid}" [disabled]="presenter.Form.invalid" id="btnSave" (click)="signIn()">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section>
+  <div class="title">
+    <h1 id="textUpload">Carga de archivo</h1>
+  </div>
+  <div id="select">
+    <select class="select" id="select-account">
+      <option [value]="uploadPresenter.items[0].id">CUENTA SUELDO</option>
+      <option id="CTS" [value]="uploadPresenter.items[1].id">CTS</option>
+    </select>
+  </div>
+  
+  <div class="container-file">
+    <div class="container-file__upload">
+      <div class="box" *ngIf="!fileModel.Name">
+        <p>
+          Ingrese archivo
+        </p>
+        <button id="btnUpload" (click)="openFileDialog()">Selecciona el archivo desde tu ordenador</button>
+        <input id="input" #fileInput type="file" class="file" (change)="fileChangeEvent($event)">
+      </div>
+      <div class="description" *ngIf="fileModel.Name">
+        <p id="textDescription">
+          {{text}}
+        </p>
+        <div [ngClass]="{'description__namefile': !error, 'description__errorfile': error}">
+          <p>
+            {{fileModel.Name}}
+          </p>
+        </div>
+        <div class="description__buttons">
+          <button class="button-secondary" id="btnCancel" (click)="cancel()">Cancelar</button>
+          <button [ngClass]="{'button': !error, 'disabled': error}" [disabled]="error" id="btnProccess" (click)="process()">Procesar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
